@@ -1,0 +1,10 @@
+{
+    "name": "oscar/modelo-examen",
+    "authors": [
+        {
+            "name": "Oscar",
+            "email": "oscarcostero@gmail.com"
+        }
+    ],
+    "require": {}
+}
