@@ -11,7 +11,7 @@
  *  - Aprobar el curso!
  * 
  */
-include './vendor/autoload.php';
+include 'vendor/autoload.php';
 include 'Robot.php';
 
 use PHPUnit\Framework\TestCase;

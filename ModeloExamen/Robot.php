@@ -32,18 +32,63 @@
  */
 
 class Robot {
-  public function cargar() {
+  private $bateria=0;
+  private $posicionX=0;
+  private $posicionY=0;
+  private $agujero=array();
+
+
+  public function cargar() 
+  {
+    return $this->bateria=1000;
   }
 
-  public function bateria() {
+  public function bateria() 
+  {
+    return $this->bateria;
   }
 
-  public function posicionX() {
+  public function posicionX() 
+  {
+    return $this->posicionX;
   }
 
-  public function posicionY() {
+  public function posicionY()
+  {
+    return $this->posicionY;
   }
 
-  public function mover($x, $y) {
+  public function mover($x, $y)
+  {
+    $uno=abs($this->posicionX - $x);
+    $dos=abs($this->posicionY - $y);
+
+    $salto=$uno+$dos;
+
+    if($this->bateria >= $salto){
+      $this->posicionX = $x;
+      $this->posicionY = $y;
+      $this->bateria -= $salto;
+
+      return true;
+    }else{echo 'no tiene bateria suficiente para este salto'."\n";}
+    
+
   }
+ public function agujeroNegro()
+ {
+    $agujero = range(rand(0,100), rand(0,100));
+
+    if(in_array($this->posicionX, $agujero) || in_array($this->posicionY, $agujero)){
+
+      return 'el robot murio succionado por el agujero negro'."\n";
+    }
+ }
 }
+
+$robot= new Robot();
+$robot->cargar();
+$robot->mover(10,25);
+echo 'el robot esta en la posicion' .' '.$robot->posicionY().' '.$robot->posicionX()."\n";
+echo $robot->agujeroNegro()."\n";
+echo 'el nivel de bateria es'.' '. $robot->bateria()."\n";
