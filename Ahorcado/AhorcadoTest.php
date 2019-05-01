@@ -1,6 +1,6 @@
 <?php
-require_once('./vendor/autoload.php');
-require('./Ahorcado.php');
+require_once ('./vendor/autoload.php');
+require 'Ahorcado.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -25,7 +25,7 @@ final class AhorcadoTest extends TestCase
   public function testTieneIntentos() {
     $intentos = rand(0, 500);
     $ahorcado = new Ahorcado("aeou", $intentos);
-    $this->assertEquals($intentos, $ahorcado->dameIntentos());
+    $this->assertEquals($intentos, $ahorcado->dameIntentosRestantes());
   }
 
   public function testEstaLaLetra() {

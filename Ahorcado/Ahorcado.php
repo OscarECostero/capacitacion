@@ -2,7 +2,8 @@
 
 require './vendor/autoload.php';
 
-class Ahorcado {
+class Ahorcado
+{
   private $palabra;
   private $intentos;
 
@@ -10,15 +11,49 @@ class Ahorcado {
     $this->palabra = $palabra;
     $this->intentos = $intentos;
   }
-  public function damePalabra() {
+  public function damePalabra()
+  {
     return $this->palabra;
   }
 
-  public function dameIntentos() {
+  public function dameIntentosRestantes() 
+  {
     return $this->intentos;
   }
 
-  public function mostrarTablero() {
-    return "_ _ _ _ _";
+  public function mostrar()
+  {
+    $arraypalabra=str_split($this->palabra);
+    //var_dump($arraypalabra);
+    foreach($arraypalabra as $letra){
+      $guion='_';
+      echo $guion.' ';
+    }
+
+  }
+  public function pasarLetra($letra)
+  {
+    $arraypalabra=str_split($this->palabra);
+
+    foreach ($arraypalabra as $value) {
+      if($value == $letra){
+        $value=$letra;
+      }
+    }
+
+  }
+  public function perdio()
+  {
+    if($this->intentos == 0){
+      return true;
+    }else{return false;}
+
+  }
+  public function gano()
+  {
+    
   }
 }
+$new= new Ahorcado('palabra',5);
+$new->mostrar();
+$new->pasarLetra('l');
