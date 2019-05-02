@@ -1,0 +1,12 @@
+{
+    "name": "oscar/modelo-examen2",
+    "authors": [
+        {
+            "name": "Oscar",
+            "email": "oscarcostero@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^8.1"
+    }
+}
