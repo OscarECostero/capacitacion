@@ -24,10 +24,8 @@ class Ahorcado
   public function mostrar()
   {
     $arraypalabra=str_split($this->palabra);
-    //var_dump($arraypalabra);
     foreach($arraypalabra as $letra){
-      $guion='_';
-      echo $guion.' ';
+   ;
     }
 
   }
