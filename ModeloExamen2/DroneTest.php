@@ -43,11 +43,21 @@ final class DroneTest extends TestCase
     {
         $drone = new Drone('100');
         $drone->mover(30,10);
-        $this->assertEquals(1, $drone->historial());
+        $drone->mover(4,5);
+        $drone->mover(2,1);
+        $drone->mover(0,0);
+        $drone->mover(2,1);
+        $this->assertEquals(5,count($drone->historial()));
+    }
+    public function testSiRepiteLaPosicionNoSeMueve()
+    {
+        $drone = new Drone('100');
+        $drone->mover(30,10);
+        $this->assertFalse($drone->mover(30,10));
+        //por ser la misma posicion no deberia retornar true ya que no se mueve
     }
 
 
 
 
 }
-//mover historial cantidadDeBateria
