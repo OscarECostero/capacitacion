@@ -28,10 +28,10 @@ final class ConcesionariaTest extends TestCase
         $concesionaria = new Concesionaria();
         $this->assertTrue($concesionaria->agregarAutos(1342, 'audi', 'r8', 2018, 30000));
         $this->assertTrue($concesionaria->agregarAutos(6526, 'ferrari', 'enzo', 2018, 30000));
-        $this->assertTrue($concesionaria->agregarAutos(7283, 'bmw', 'r7', 2018, 30000));
+        $this->assertTrue($concesionaria->agregarAutos(7283, 'bmw5', 'r7', 2018, 30000));
         $this->assertTrue($concesionaria->agregarAutos(783, 'bmw', 'r', 2019, 30000));
 
-        $this->assertEquals(2, count($concesionaria->mostrarAutosDeMarca('bmw')));
+        $this->assertEquals([['id'=>783,'marca'=>'bmw','modelo'=>'r','anio'=>2019,'precio'=>30000]],$concesionaria->mostrarAutosDeMarca('bmw'));
 
     }
     public function testMostrarMarcaQueNoExiste()

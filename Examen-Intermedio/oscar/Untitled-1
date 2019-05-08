@@ -1,0 +1,7 @@
+git init crear proyecto
+git add añadimos archivos
+git status estado del proyecto
+git log log de commits
+git checkout -- archivo  vuelve los cambios al ultimo commit
+git diff archivo vemos las diferencias
+
